@@ -19,6 +19,8 @@ Have a look at the [free training] offered by Docker.
 
 Have a look at the [repository] of images offered by Docker.
 
+Have a look at the [Quickref] by Quickref/Docker.
+
 ### Optional Post Installation Steps
 
 To create the docker group and add your user:
@@ -287,3 +289,4 @@ db.messages.find()
 [free training]: https://training.docker.com
 [repository]: https://hubs.docker.com
 [Alpine Linux]: http://www.alpinelinux.org/
+[Quickref]: https://quickref.me/docker.html
