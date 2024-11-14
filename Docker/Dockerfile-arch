@@ -1,0 +1,14 @@
+# Use the latest Arch Linux base image
+FROM archlinux:latest
+
+# Update the package database and install some basic utilities
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm \
+    base \
+    base-devel \
+    git \
+    vim \
+    curl \
+    wget \
+    && pacman -Scc --noconfirm
+
