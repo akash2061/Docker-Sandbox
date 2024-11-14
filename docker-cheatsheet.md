@@ -167,6 +167,14 @@ docker run hello-world
    docker run -it alpine bin/sh
    ```
 
+### Multi Platform build
+
+1. Running the run command with buildx to build multi platform container
+
+   ```docker
+   docker buildx build  --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_USERNAME/docker-node-server:latest --push .
+   ```
+
 ### Run MongoDB
 
 #### Run MongoDB Using Named Volume
