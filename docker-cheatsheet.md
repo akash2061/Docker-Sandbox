@@ -172,7 +172,7 @@ docker run hello-world
 Running the run command with buildx to build multi platform container
 
 ```docker
-   docker buildx build  --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_USERNAME/docker-node-server:latest --push .
+docker buildx build  --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_USERNAME/docker-node-server:latest --push .
 ```
 
 ### Run MongoDB
