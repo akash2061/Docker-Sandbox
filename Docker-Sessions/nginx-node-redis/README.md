@@ -1,7 +1,6 @@
 ## A counter web application built using Node.js, Nginx proxy and Redis database
 
 
-
 Project structure:
 ```
 tree
