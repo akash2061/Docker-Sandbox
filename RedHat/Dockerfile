@@ -4,20 +4,23 @@ FROM redhat/ubi9:latest
 # Set environment variables
 ENV HOME=/root
 
-# Copy the EPEL packages installation script to the container
-COPY epel_packages.sh /root/Downloads/epel_packages.sh
-
 # Copy the login script to the container
 COPY login.sh /root/Downloads/login.sh
 
 # Make the scripts executable
-RUN chmod +x /root/Downloads/epel_packages.sh \
-    && chmod +x /root/Downloads/login.sh
+RUN chmod +x /root/Downloads/login.sh
 
-# Create persistent volumes for data, home, etc, and var directories
+# Volume for data persistence
 VOLUME ["/data", "/root", "/etc", "/var"]
 
-# Install necessary tools
+# Install EPEL repository
+RUN curl -o /tmp/epel-release-latest-9.noarch.rpm https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \
+    && dnf -y install /tmp/epel-release-latest-9.noarch.rpm \
+    && rm -f /tmp/epel-release-latest-9.noarch.rpm \
+    && dnf install neofetch -y \
+    && dnf clean all
+
+# Install necessary tools and additional packages
 RUN dnf -y install \
     bash-completion \
     nano \
