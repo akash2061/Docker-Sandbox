@@ -1,0 +1,6 @@
+login & nologin shells {root/local User - login: 0 & >=1000} {system user - nologin: 1-999} := [Create users & give them login & nologin]
+
+groups & types:
+  Primary
+  Supplementary
+
