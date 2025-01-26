@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  redhat:
+    image: ssh-redhat:0
+    container_name: ssh-rh
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "22:22"
