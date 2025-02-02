@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   redhat:
     image: ssh-redhat:0
@@ -9,4 +8,4 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "22:22"
+      - "2222:22"

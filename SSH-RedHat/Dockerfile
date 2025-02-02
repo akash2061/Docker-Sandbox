@@ -22,7 +22,7 @@ RUN curl -o /tmp/epel-release-latest-9.noarch.rpm https://dl.fedoraproject.org/p
 
 # Enable and configure the SSH service & root login password <> (change it to your desired password)
 RUN mkdir -p /var/run/sshd \
-    && echo 'root:<>' | chpasswd \
+    && echo 'root:root' | chpasswd \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
     && ssh-keygen -A
