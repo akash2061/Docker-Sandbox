@@ -1,0 +1,10 @@
+# docker-compose.yaml
+
+services:
+  redhat:
+    image: akash2061/ssh-redhat:latest
+    container_name: ssh-rh
+    stdin_open: true
+    tty: true
+    ports:
+      - "2222:22"
